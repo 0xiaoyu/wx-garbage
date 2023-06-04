@@ -1,0 +1,32 @@
+/* pages/add/add.wxss */
+
+.page{
+  height:100%;
+  background:var(--weui-BG-2)
+}
+navigator {
+  border: 1px solid blueviolet;
+  border-radius: 20rpx !important;
+}
+a{
+  border: 1px solid blueviolet;
+  border-radius: 20rpx !important;
+}
+.weui-bottom-fixed-opr{
+  display: flex;
+  padding:30px 30px 0;
+}
+button{
+  border: 1px solid blueviolet;
+  border-radius: 20rpx !important;
+}
+#js_opr{
+  margin-right: 30rpx;
+}
+#cancel{
+  margin-top: 0%;
+  margin-left: 30rpx;
+}
+image{
+  height: 400rpx;
+}

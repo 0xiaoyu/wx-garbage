@@ -1,0 +1,76 @@
+/* pages/detail/detail.wxss */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10rpx;
+}
+.title{
+  display: flex;
+  flex-direction: row;
+}
+.titletext{
+  align-items: flex-start;
+  margin-top: 50rpx;
+  margin-right: 200rpx;
+}
+.icon-img{
+  width: 50rpx;
+  height: 48rpx;
+  border-radius: 5rpx;
+  align-items: flex-end;
+  justify-content: flex-end;
+  flex-direction:column;
+}
+.garbage-img {
+  width: 300rpx;
+  height: 300rpx;
+  margin-bottom: 20rpx;
+  align-items: flex-end;
+}
+
+.garbage-info {
+  width: 100%;
+}
+
+.garbage-name {
+  font-size: 50rpx;
+  font-weight: bold;
+  margin-bottom: 10rpx;
+}
+
+.garbage-category {
+  font-size: 28rpx;
+  color: #999;
+  margin-bottom: 20rpx;
+}
+.modify{
+  text-align: center;
+  top:90%;
+  right: 2%;
+  position:fixed;
+  z-index:100;
+}
+
+.garbage-description {
+  font-size: 28rpx;
+  line-height: 40rpx;
+  margin-bottom: 20rpx;
+}
+
+.garbage-tips {
+  margin-top: 20rpx;
+}
+
+.tip-title {
+  font-size: 28rpx;
+  font-weight: bold;
+  margin-bottom: 10rpx;
+}
+
+.tip-item {
+  font-size: 24rpx;
+  color: #999;
+  margin-bottom: 10rpx;
+}
+

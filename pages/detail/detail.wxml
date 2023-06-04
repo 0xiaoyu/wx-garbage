@@ -1,0 +1,25 @@
+<view class="container">
+  <view class="title">
+    <view class="titletext">
+      <text class="garbage-name">{{garbage.name}}</text>
+      <image class="icon-img" src="/images/{{garbage.sortid}}.png" />
+      <view class="">
+        <text class="garbage-category">{{sorts[garbage.sortid]}}</text>
+      </view>
+    </view>
+    <image class="garbage-img" src="{{garbage.imagePath}}"></image>
+  </view>
+  <view class="garbage-info">
+    <view class="garbage-tips">
+      <text class="tip-title">温馨提示：</text>
+      <text class="tip-item" user-select>{{garbage.detail}}</text>
+    </view>
+  </view>
+  <view class="modify">
+    <view>添加</view>
+    <cover-view>
+      <mp-icon type="outline" icon="add2" color="black" size="{{35}}" bindtap="modify">
+      </mp-icon>
+    </cover-view>
+  </view>
+</view>

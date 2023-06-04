@@ -1,0 +1,42 @@
+<page-meta root-font-size="system" />
+<form class="" bindsubmit="add">
+  <view class="button-sp-area cell">
+    <a class="weui-btn_cell weui-btn_cell-primary" aria-role="button" bindtap="chooseImage" wx:if="{{garbage.imagePath==null||garbage.imagePath==''}}">上传图片</a>
+    <wx:else>
+      <image src="{{garbage.imagePath}}" />
+    </wx:else>
+  </view>
+  <view class="weui-cell weui-cell_active">
+    <view class="weui-cell__hd"><label class="weui-label">垃圾名称</label></view>
+    <view class="weui-cell__bd weui-flex">
+      <input class="weui-input" type="text" placeholder="请输入垃圾名称" placeholder-class="weui-input__placeholder" value="{{garbage.name}}" required name="name" />
+    </view>
+  </view>
+  <view class="weui-cell weui-cell_active">
+    <view class="weui-cell__hd"><label class="weui-label">选择垃圾类别</label></view>
+    <view class="weui-cell__hd">
+      <picker bindchange="bindPickerChange" value="{{sortid}}" range="{{array}}">
+        <a type="default" class="weui-btn weui-btn_default">{{array[sortid]}}</a>
+      </picker>
+    </view>
+  </view>
+  <view class="weui-cell__bd">
+    <textarea class="weui-textarea" placeholder="垃圾的详细说明/建议" placeholder-class="weui-input__placeholder" rows="6" maxlength="600" name="detail" value="{{garbage.detail}}"></textarea>
+    <view aria-role="option" class="weui-textarea-counter"><span>0</span>/200</view>
+  </view>
+  <view data-weui-theme="{{theme}}" data-weui-mode="{{mode}}">
+    <view class="weui-bottom-fixed-opr-page  {{wrap ? 'weui-bottom-fixed-opr-page_btn-wrap' : ''}}">
+      <view class="weui-bottom-fixed-opr" id="js_opr">
+        <button class="weui-btn weui-btn_primary" id="js_btn" aria-role="button" form-type="submit">提交</button>
+        <button class="weui-btn weui-btn_default" aria-role="button" bindtap="cancel">取消</button>
+      </view>
+    </view>
+  </view>
+</form>
+<view aria-role="alert" class="fadeIn {{hideWarnToast ? 'fadeOut' : ''}}" wx:if="{{warnToast}}">
+  <view class="weui-mask_transparent"></view>
+  <view class="weui-toast">
+    <i class="weui-icon-warn weui-icon_toast"></i>
+    <view class="weui-toast__content">垃圾名称不能为空</view>
+  </view>
+</view>

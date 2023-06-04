@@ -1,0 +1,22 @@
+<!--index.wxml-->
+<view class="">
+  <mp-searchbar bindselectresult="selectResult" search="{{searchs}}" bindselectresult="selectResult" placeholder="搜索垃圾类别" throttle="{{1000}}" bind:cancel="showOther" bind:focus="hindOther" />
+</view>
+<view class="index2">
+  <button id="flyButton" type="primary" bindtap="photo" size="default">拍照识别</button>
+  <view class="index3">
+    <text>没有找到？</text>
+    <button type="default" bindtap="add" size="mini">添加类型</button>
+  </view>
+</view>
+<view class="schoollist">
+  <block wx:for="{{items}}" wx:key="item">
+    <view class="school-list">
+      <navigator url="/pages/info/info?id={{item.id}}" open-type="reLaunch">
+        <view class="school-list-info" index="{{index}}">
+          <image class="school-list-photo" src="{{item.imageUrl}}" />
+        </view>
+      </navigator>
+    </view>
+  </block>
+</view>

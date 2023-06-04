@@ -1,0 +1,39 @@
+<!--主盒子-->
+<view class="con">
+  <!--左侧栏-->
+  <view class="nav_left">
+    <block wx:for="{{cateItems}}" wx:key="item">
+      <!--当前项的id等于item项的id，那个就是当前状态-->
+      <!--用data-index记录这个数据在数组的下标位置，使用data-id设置每个item的id值，供打开2级页面使用-->
+      <view class="nav_left_items {{curNav == item.cate_id ? 'active' : ''}}" bindtap="switchRightTab" data-index="{{index}}" data-id="{{item.cate_id}}">{{item.cate_name}}</view>
+    </block>
+  </view>
+  <!--右侧栏-->
+  <view class="nav_right">
+    <!--如果有数据，才遍历项-->
+
+    <view wx:if="{{curNav!=0}}">
+      <view class="commonInfo">{{infoString}}</view>
+      <view>
+        <view class="weui-article__h2">{{cateItems[curNav].cate_name}}投放要求</view>
+      </view>
+      <view class="weui-article__ul">
+        <block wx:for="{{requirements}}" wx:key="item">
+          <view class="weui-article__li">{{item}}</view>
+        </block>
+      </view>
+      <view class="table">
+        <view class="tr" wx:for="{{[0,1,2,3]}}" wx:key="item">
+          <view class="td">{{tableData[item*2]}}</view>
+          <view class="td">{{tableData[item*2+1]}}</view>
+        </view>
+      </view>
+    </view>
+    <view wx:else>
+      <view>垃圾分类，一般是指按一定规定或标准将垃圾分类储存、投放和搬运，从而转变成公共资源的一系列活动的总称。</view>
+      <view>垃圾分类的目的是提高垃圾的资源价值和经济价值，减少垃圾处理量和处理设备的使用，降低处理成本，减少土地资源的消耗，具有社会、经济、生态等几方面的效益。</view>
+      <view>垃圾在分类储存阶段属于公众的私有品，垃圾经公众分类投放后成为公众所在小区或社区的区域性公共资源，垃圾分类搬运到垃圾集中点或转运站后成为没有排除性的公共资源。从国内外各城市对生活垃圾分类的方法来看，大多都是根据垃圾的成分、产生量，结合本地垃圾的资源利用和处理方式等来进行分类的。</view>
+      <view>2020年5月1日起，《北京市生活垃圾管理条例》实施 。</view>
+    </view>
+  </view>
+</view>

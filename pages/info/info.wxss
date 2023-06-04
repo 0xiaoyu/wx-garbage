@@ -1,0 +1,123 @@
+page{  
+  background: #f5f5f5;  
+}  
+/*总体主盒子*/  
+.con {  
+  position: relative;  
+  width: 100%;  
+  height: 100%;  
+  background-color: #fff;  
+  color: #939393;  
+}
+ /*左侧栏主盒子*/  
+.nav_left{  
+  /*设置行内块级元素（没使用定位）*/  
+  display: inline-block;  
+  width: 25%;  
+  height: 100%;  
+  /*主盒子设置背景色为灰色*/  
+  background: #f5f5f5;  
+  text-align: center;  
+}  
+/*左侧栏list的item*/  
+.nav_left .nav_left_items{  
+  /*每个高30px*/  
+  height: 40px;  
+  /*垂直居中*/  
+  line-height: 40px;  
+  /*再设上下padding增加高度，总高42px*/  
+  padding: 6px 0;  
+  /*只设下边线*/  
+  border-bottom: 1px solid #dedede;  
+  /*文字14px*/  
+  font-size: 14px; 
+}  
+/*左侧栏list的item被选中时*/  
+.nav_left .nav_left_items.active{  
+  /*背景色变成白色*/  
+  background: #fff;  
+  color: #f0145a; 
+}  
+/*右侧栏主盒子*/  
+.nav_right{  
+  /*右侧盒子使用了绝对定位*/  
+  position: absolute;  
+  top: 0;  
+  right: 0;  
+  flex: 1;  
+  /*宽度75%，高度占满，并使用百分比布局*/  
+  width: 75%;  
+  height: 1000px;  
+  padding: 10px;  
+  box-sizing: border-box;  
+  background: #fff;  
+}  
+/*右侧栏list的item*/  
+.nav_right .nav_right_items{  
+  /*浮动向左*/  
+  float: left;  
+  /*每个item设置宽度是33.33%*/  
+  width: 33.33%;  
+  height: 94px;  
+  text-align: center;  
+}  
+.nav_right .nav_right_items image{  
+  /*被图片设置宽高*/  
+  width: 60px;  
+  height: 50px;   
+}  
+.nav_right .nav_right_items text{  
+  /*给text设成块级元素*/  
+  display: block;   
+  font-size: 14px;  
+  color: black;
+  /*设置文字溢出部分为...*/  
+  overflow: hidden;  
+  white-space: nowrap;  
+  text-overflow: ellipsis;  
+} 
+.nodata_text
+{
+  color:#000;
+  font-size: 14px;  
+  text-align: center;  
+} 
+
+.page{background-color:var(--weui-BG-2)}image{margin:4px 0}
+
+.table {
+  display: flex;
+  flex-direction: column;     /* 排列形式: 向下 */
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.tr {
+  display: flex;
+  flex-direction: row;
+}
+
+.th, .td {  /* 公有的属性 */
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;            /* 自动换行 */
+  width: 50%;					/* 4个25%相加刚好100% */
+  height: 100rpx;
+  font-size: large;
+  text-align: center;         /* 文本居中 */
+  justify-content:center;     /* 主轴居中 */
+  align-items: center;        /* 交叉轴居中 */
+  border-top: 1px solid #dadada;      /* 单元格上线框 */
+  border-bottom: 1px solid #dadada;   /* 单元格下线框 */
+  border-left: 1px solid #dadada;     /* 单元格左线框 */
+  border-right: 1px solid #dadada;    /* 单元格右线框 */
+}
+
+.th {
+  font-weight: 800;           /* 字体加重 */
+  background-color:#B3CCF4;   /* 背景色 */
+}
+
+.td {
+  background-color:#edf3e9;   /* 背景色 */
+}

@@ -1,0 +1,12 @@
+<view class="map_container">
+  <map class="map" id="map" longitude="{{longitude}}" latitude="{{latitude}}" scale="19" markers="{{markers}}" min-scale="16" bindmarkertap="gotohere">
+    <view class="add">
+      <view>添加</view>
+      <cover-view>
+        <mp-icon type="outline" icon="add2" color="black" size="{{35}}" bindtap="showMap">
+        </mp-icon>
+      </cover-view>
+    </view>
+  </map>
+</view>
+<!--index.wxml-->
