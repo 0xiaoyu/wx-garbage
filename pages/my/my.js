@@ -46,8 +46,8 @@ Page({
     })
   },
   getOpenId: function() {  // 获取用户的唯一标识
-    let  appId = 'wx67d7a099e3fb9fe2'
-    let appSecret = 'f5f3064bdb836d0d8a166029bd72e33e'
+    let  appId = 'xx'
+    let appSecret = 'xx'
     let _this = this
     wx.login({
       success(res){
