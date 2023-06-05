@@ -1,7 +1,7 @@
 // pages/add/add.js
 const chooseLocation = requirePlugin('chooseLocation');
 //使用在腾讯位置服务申请的key（必填）
-const key = "ZZXBZ-G6E3Z-RMQXR-Z4244-OJJTT-TOFNY"; 
+const key = "xx"; 
 //调用插件的app的名称（必填）
 const referer = "wx-garbage";
 
