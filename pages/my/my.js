@@ -1,4 +1,5 @@
 // pages/my/my.js
+var util = require('../../utils/util.js');
 Page({
 
   /**
@@ -16,6 +17,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
    onLoad() {
+    this.getOpenId()
     if (wx.getUserProfile) {
       this.setData({
         canIUseGetUserProfile: true
@@ -42,5 +44,38 @@ Page({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
     })
+  },
+  getOpenId: function() {  // 获取用户的唯一标识
+    let  appId = 'wx67d7a099e3fb9fe2'
+    let appSecret = 'f5f3064bdb836d0d8a166029bd72e33e'
+    let _this = this
+    wx.login({
+      success(res){
+        wx.request({
+          url: 'https://api.weixin.qq.com/sns/jscode2session',
+          data:{
+            appid: appId,
+            secret: appSecret,
+            js_code: res.code,
+            grant_type:'authorization_code'
+          },
+          method:"GET",
+          success(res){
+            _this.setData({
+              openid:res.data.openid,
+              session_key:res.data.session_key
+            })
+          }
+        })
+      }
+    })
+  },
+  gotoHistory(){
+    wx.navigateTo({
+      url: `/pages/history/history?id=${this.data.openid}`
+    })
+  },
+  photo(e){
+    util.photo()
   }
 })

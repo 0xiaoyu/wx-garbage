@@ -21,12 +21,12 @@
     </view>
 
     <view class="scanicon">
-      <image src="../../images/scan.png" />
+      <image src="../../images/scan.png" bindtap="photo" />
     </view>
   </view>
 
   <view class="partTwo">
-    <view class="item">
+    <view class="item" bindtap="gotoHistory">
       <view class="itemname">
         <view>
           <image src="/images/历史记录.png" />
@@ -37,7 +37,7 @@
         <image src="../../images/right.png" />
       </view>
     </view>
-    <view class="scan">
+    <view class="scan" bindtap="photo">
       <view class="itemname">
         <view>
           <image src="/images/scan.png" />

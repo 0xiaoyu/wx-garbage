@@ -2,6 +2,7 @@
 
 <mp-toptips msg="{{buttonText}}" type="error" show="{{true}}" delay="{{1000000000}}"></mp-toptips>
 <canvas canvas-id="myCanvas" style='width:{{canvasWidth}}px; height:{{canvasHeight}}px'></canvas>
+
 <view>{{detail}}</view>
 <view>处理建议</view>
 <view class="weui-article__ul">

@@ -1,5 +1,5 @@
 
-
+var util = require('../../utils/util.js');
 Page({
 
   /**
@@ -25,16 +25,8 @@ Page({
     
   },
   // 拍照识别
-  photo(e){
-    wx.chooseMedia({
-      count:1,
-      mediaType:["image"]
-    }).then(res=>{
-      console.log(res);
-      wx.navigateTo({
-        url: `/pages/photo/photo?imagePath=${res.tempFiles[0].tempFilePath}`
-      })
-    })
+  photo(){
+    util.photo()
   },
 
 

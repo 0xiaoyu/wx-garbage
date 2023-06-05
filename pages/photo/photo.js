@@ -70,7 +70,7 @@ Page({
       // console.log(path);
       ctx.drawImage(path, 0, 0, width, height);
       // console.log(res);
-      ctx.draw(false, () => {
+      ctx.draw(true, () => {
         wx.canvasGetImageData({
           canvasId: "myCanvas",
           height: height,
@@ -80,9 +80,8 @@ Page({
         }).then(res => {
           console.log(res);
           // for(let i = 0 ; i < res.data.length; i ++){
-           //   res.data[i] = res.data[i] / 255.0
+          //    res.data[i] = res.data[i] / 255.0
           // }
-          // console.log(res.data[100])
           PaddleJS.predict(res).then(res =>{
             // console.log(res)
             const max = Math.max.apply(null, res);
@@ -96,12 +95,12 @@ Page({
               let a = labelMap[index].split("_")
               _this.getDetail(a[1])
               _this.getC(a[0])
-              wx.hideLoading()
              }else{
                this.setData({
                  buttonText: "没识别出来"
                })
-            }
+              }
+              wx.hideLoading()
           })
         })
        })

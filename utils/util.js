@@ -14,6 +14,18 @@ const formatNumber = n => {
   return n[1] ? n : `0${n}`
 }
 
+const photo = ()=>{
+  wx.chooseMedia({
+    count:1,
+    mediaType:["image"]
+  }).then(res=>{
+    console.log(res);
+    wx.navigateTo({
+      url: `/pages/photo/photo?imagePath=${res.tempFiles[0].tempFilePath}`
+    })
+  })
+}
+
 module.exports = {
-  formatTime
+  formatTime,photo
 }

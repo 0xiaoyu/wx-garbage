@@ -7,7 +7,8 @@
     "pages/info/info",
     "pages/add/add",
     "pages/photo/photo",
-    "pages/addmo/addmo"
+    "pages/addmo/addmo",
+    "pages/history/history"
   ],
   "window":{
     "backgroundTextStyle":"light",
